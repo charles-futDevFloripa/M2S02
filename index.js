@@ -129,3 +129,21 @@ console.log('Contador 2');
 let contador2 = contador();
 console.log(contador2());
 console.log(contador2());
+
+///////////////////////////// Exercicio 05 ////////////////////////////////////Descrição
+/*
+Dado um array de números, crie uma função que use reduce para calcular o produto de todos os números no array.
+
+function calcularProduto(numeros) {
+// Sua implementação aqui
+}
+
+let numeros = [1, 2, 3, 4, 5];
+console.log(calcularProduto(numeros)); // 120*/
+
+function calcularProduto(numeros) {
+  return numeros.reduce((produto, numero) => produto * numero, 1);
+}
+
+let numeros2 = [1, 2, 3, 4, 5];
+console.log(calcularProduto(numeros2));
