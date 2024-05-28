@@ -8,7 +8,7 @@ function filtrarPares(numeros) {
 
 let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 console.log(filtrarPares(numeros)); // [2, 4, 6, 8, 10]*/
-
+console.log('Exercício 1');
 function filtrarPares(numeros) {
   return numeros.filter((numero) => numero % 2 === 0);
 }
@@ -35,7 +35,7 @@ let pessoas = [
 ];
 console.log(filtrarAdultos(pessoas)); // ['Bob', 'David']
 */
-
+console.log('Exercício 2');
 function filtrarAdultos(pessoas) {
   return pessoas
     .filter((pessoa) => pessoa.idade >= 18)
@@ -74,6 +74,7 @@ livros: 49.98,
 roupas: 49.99
 }
 \/ */
+console.log('Exercício 3');
 function agruparPorCategoria(produtos) {
   return produtos.reduce((acumulador, produto) => {
     if (!acumulador[produto.categoria]) {
@@ -111,6 +112,7 @@ let contador2 = contador();
 console.log(contador2()); // 1
 console.log(contador2()); // 2
 */
+console.log('Exercício 4');
 function contador() {
   let valor = 0;
   return function () {
@@ -141,6 +143,7 @@ function calcularProduto(numeros) {
 let numeros = [1, 2, 3, 4, 5];
 console.log(calcularProduto(numeros)); // 120*/
 
+console.log('Exercício 5');
 function calcularProduto(numeros) {
   return numeros.reduce((produto, numero) => produto * numero, 1);
 }
@@ -165,6 +168,7 @@ return numero * 2;
 let numeros = [1, 2, 3, 4, 5];
 console.log(transformarArray(numeros, dobrar)); // [2, 4, 6, 8, 10]
 */
+console.log('Exercício 6');
 function transformarArray(array, transformacao) {
   return array.map(transformacao);
 }
@@ -175,3 +179,38 @@ function dobrar(numero) {
 
 let numeros3 = [1, 2, 3, 4, 5];
 console.log(transformarArray(numeros3, dobrar));
+
+///////////////////////////// Exercicio 07 ////////////////////////////////////
+
+/*
+Crie uma função compor que recebe duas funções f e g e retorna uma nova função que é a composição de f e g (ou seja, f(g(x))).
+function compor(f, g) {
+// Sua implementação aqui
+}
+function somar1(x) {
+return x + 1;
+}
+function multiplicar2(x) {
+return x * 2;
+}
+let funcaoComposta = compor(somar1, multiplicar2);
+console.log(funcaoComposta(5)); // 11 (multiplicar2(5) = 10, somar1(10) = 11)
+*/
+
+console.log('Exercício 7');
+function compor(f, g) {
+  return function (x) {
+    return f(g(x));
+  };
+}
+
+function somar1(x) {
+  return x + 1;
+}
+
+function multiplicar2(x) {
+  return x * 2;
+}
+
+let funcaoComposta = compor(somar1, multiplicar2);
+console.log(funcaoComposta(5));
