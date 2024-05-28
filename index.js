@@ -130,7 +130,7 @@ let contador2 = contador();
 console.log(contador2());
 console.log(contador2());
 
-///////////////////////////// Exercicio 05 ////////////////////////////////////Descrição
+///////////////////////////// Exercicio 05 ////////////////////////////////////
 /*
 Dado um array de números, crie uma função que use reduce para calcular o produto de todos os números no array.
 
@@ -147,3 +147,31 @@ function calcularProduto(numeros) {
 
 let numeros2 = [1, 2, 3, 4, 5];
 console.log(calcularProduto(numeros2));
+
+///////////////////////////// Exercicio 06 ////////////////////////////////////
+
+/*
+Crie uma função transformarArray, que recebe um array e uma função de transformação e retorna um novo array, onde cada elemento é 
+o resultado da aplicação da função de transformação ao elemento correspondente do array original.
+
+function transformarArray(array, transformacao) {
+// Sua implementação aqui
+}
+
+function dobrar(numero) {
+return numero * 2;
+}
+
+let numeros = [1, 2, 3, 4, 5];
+console.log(transformarArray(numeros, dobrar)); // [2, 4, 6, 8, 10]
+*/
+function transformarArray(array, transformacao) {
+  return array.map(transformacao);
+}
+
+function dobrar(numero) {
+  return numero * 2;
+}
+
+let numeros3 = [1, 2, 3, 4, 5];
+console.log(transformarArray(numeros3, dobrar));
