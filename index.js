@@ -93,3 +93,39 @@ let produtos = [
 ];
 
 console.log(agruparPorCategoria(produtos));
+
+///////////////////////////////// Exercicio 04 ////////////////////////////////////
+/*
+Crie uma função contador que retorna uma outra função que incrementa um valor interno e retorna o valor atualizado a cada chamada.
+
+function contador() {
+// Sua implementação aqui
+}
+
+let contador1 = contador();
+console.log(contador1()); // 1
+console.log(contador1()); // 2
+console.log(contador1()); // 3
+
+let contador2 = contador();
+console.log(contador2()); // 1
+console.log(contador2()); // 2
+*/
+function contador() {
+  let valor = 0;
+  return function () {
+    valor += 1;
+    return valor;
+  };
+}
+
+let contador1 = contador();
+console.log('Contador 1');
+console.log(contador1());
+console.log(contador1());
+console.log(contador1());
+
+console.log('Contador 2');
+let contador2 = contador();
+console.log(contador2());
+console.log(contador2());
